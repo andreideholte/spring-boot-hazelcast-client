@@ -37,10 +37,9 @@ public class CidadeServiceImpl implements CidadeService {
 	}
 
 
-	/** Para o Predicate somente irá funcionar sem esforços quando subir o hazelcast com o servidor,
-	 * no caso em que eu estou subindo o server separado do client, o JAR que contém o model do projeto
-	 * deverá ser adicionado ao classpath do hazelcast, no arquivo start.sh é o lugar de fazer esta 
-	 * alteração.
+	/** O Predicate somente irá funcionar sem esforços quando subir o client do hazelcast com o servidor,
+	 * no caso deste projeto eu estou subindo o server separado do client. Por isso o JAR que contém o model do projeto
+	 * deverá ser adicionado ao classpath do hazelcast. A alteração pode ser feita no arquivo start.sh.
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
