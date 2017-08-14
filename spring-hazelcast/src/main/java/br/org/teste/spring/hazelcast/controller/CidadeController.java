@@ -32,7 +32,7 @@ public class CidadeController {
 			this.cidadeService.incluirCidade(cidade);
 
 			logger.info("[CIDADE-CONTROLLER][incluirCidades] Finalizado Processo de Inclusao de Cidade - Cidade ["+ cidade.getNome() +"], Populacao ["+ cidade.getPopulacao() +"]");
-			return new ResponseEntity<String>(HttpStatus.CREATED);
+			return new ResponseEntity<>(HttpStatus.CREATED);
 
 		}catch(Exception e){
 			logger.info("[CIDADE-CONTROLLER][incluirCidades] Falha Ocorrida Durante o Processo de Inclusao de Cidade - Cidade ["+ cidade.getNome() +"], Populacao ["+ cidade.getPopulacao() +"], Excecao ["+ e.getMessage() +"]");
