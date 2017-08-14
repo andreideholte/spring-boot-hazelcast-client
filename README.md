@@ -44,7 +44,7 @@ mvn clean package install
 
 Para incluir o caminho do jar no hazelcast basta alterar o arquivo de start do hazelcast na seguinte linha:
 
-```
+```sh
 export CLASSPATH="$HAZELCAST_HOME/lib/hazelcast-all-3.8.3.jar:*$HAZELCAST_HOME/path-do-seu-jar/seus-models.jar"
 ```
 
@@ -56,7 +56,7 @@ Após feito a adição pode se iniciar o servidor.
 
 E logo após o servidor ter iniciado, deve se atentar para o ip em que o nó foi configurado (será mostrado no console em que se executou o comando), para alterar no arquivo hazelcast-client.xml localizado na pasta de resources do projeto.
 
-```
+```xml
 <address>ip-hazelcast-server:5701</address>
 ```
 
@@ -92,13 +92,13 @@ Os predicates devem ser observados na classe CidadeServiceImpl. A query retorna 
 
 O Log4j foi adicionado ao projeto para gravar os logs das requisições na aplicaço, por isso deve se levar em conta a permissão ao diretório configurado no arquivo *log4j2-spring.xml* na linha:
 
-```
+```xml
 <Property name="log-path">/var/log/teste-spring-hazelcast</Property>
 ```
 
 E para alteraço do nivel de log da aplicaço, deve se alterar as linhas:
 
-```
+```xml
 <Logger name="br.org.teste.spring.hazelcast" level="debug">
 	 <AppenderRef ref="File-Appender" level="debug"/>
 </Logger>
