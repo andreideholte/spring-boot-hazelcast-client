@@ -28,10 +28,18 @@ Após o download, o arquivo de start.sh (ambientes com kernel unix) ou start.bat
 
 **Build da Aplicação**
 
-Para o uso dos Predicates do Hazelcast funcionar corretamente é preciso colocar o caminho aonde se encontra o jar que contem os models do seu projeto que serão utilizados na desserialização para query. Para incluir, basta alterar o arquivo de start alterando a seguinte linha:
+Para o uso dos Predicates do Hazelcast funcionar corretamente é preciso colocar o caminho aonde se encontra o jar que contem os models do seu projeto que serão utilizados na desserialização para query, neste caso o jar do próprio projeto.
+
+Para gerar o jar, basta executar este comando no projeto aonde se localiza o arquivo pom.xml:
 
 ```
-export CLASSPATH="$HAZELCAST_HOME/lib/hazelcast-all-3.8.3.jar:*$HAZELCAST_HOME/lib/seu-model.jar"
+mvn clean package install
+```
+
+Para incluir o caminho do jar no hazelcast basta alterar o arquivo de start do hazelcast na seguinte linha:
+
+```
+export CLASSPATH="$HAZELCAST_HOME/lib/hazelcast-all-3.8.3.jar:*$HAZELCAST_HOME/path-do-seu-jar/seus-models.jar"
 ```
 
 Após feito a adição pode se iniciar o servidor.
