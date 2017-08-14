@@ -1,6 +1,12 @@
 # SPRING-BOOT + HAZELCAST CLIENTE [spring-boot-hazelcast-client]
 
-Aplicação feita em Spring Boot com intuito de elucidar a configuração do cliente para acesso ao hazelcast server separadamente, e com uso de *Predicates* na query de consulta.
+Aplicação feita em Spring Boot com intuito de elucidar a configuração de uma aplicação cliente para acesso a um cluster ou nó do hazelcast em outra maquina ou desvinculado ao projeto além do uso de *Predicates* na query de consulta.
+
+     [projeto cliente - maquina 1]
+               ||   /\
+               \/   ||
+[instancia cluster hazelcast - maquina n(s)]
+
 
 # PRÉ-REQUISITOS
 
@@ -59,3 +65,43 @@ Após adicionar o ip do hazelcast, pode-se então subir nossa aplicação atrav�
 ```
 mvn clean package spring-boot:run
 ```
+
+# Recursos
+
+** POST /teste-spring-hazelcast/cidades **
+
+Recurso utilizado para popular o cache enviando um JSON da cidade no body, e recebendo um 201 Created como response.
+
+Exemplo JSON:
+
+```
+{
+  "nome":"rio de janeiro",
+  "populacao": 15989929
+}
+```
+
+** GET /teste-spring-hazelcast/cidades **
+
+Recurso utilizado para consultar as cidades no cache, recebendo um __200 Ok__ e um JSON com os resultados da consulta ou um __404 Not Found__ quando não retorna ninguem da consulta.
+
+Os predicates devem ser observados na classe CidadeServiceImpl. A query retorna cidades com população inferior a 200.
+
+
+# Log4J
+
+O Log4j foi adicionado ao projeto para gravar os logs das requisições na aplicaço, por isso deve se levar em conta a permissão ao diretório configurado no arquivo *log4j2-spring.xml* na linha:
+
+```
+<Property name="log-path">/var/log/teste-spring-hazelcast</Property>
+```
+
+E para alteraço do nivel de log da aplicaço, deve se alterar as linhas:
+
+```
+<Logger name="br.org.teste.spring.hazelcast" level="debug">
+	 <AppenderRef ref="File-Appender" level="debug"/>
+</Logger>
+```
+
+att.
