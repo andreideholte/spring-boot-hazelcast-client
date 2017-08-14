@@ -96,7 +96,7 @@ O Log4j foi adicionado ao projeto para gravar os logs das requisições na aplic
 <Property name="log-path">/var/log/teste-spring-hazelcast</Property>
 ```
 
-E para alteraço do nivel de log da aplicaço, deve se alterar as linhas:
+E para alteraço do nivel de log da aplicação, deve se alterar as linhas:
 
 ```xml
 <Logger name="br.org.teste.spring.hazelcast" level="debug">
