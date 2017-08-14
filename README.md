@@ -68,20 +68,20 @@ mvn clean package spring-boot:run
 
 # Recursos
 
-** POST /teste-spring-hazelcast/cidades **
+**POST /teste-spring-hazelcast/cidades**
 
 Recurso utilizado para popular o cache enviando um JSON da cidade no body, e recebendo um 201 Created como response.
 
 Exemplo JSON:
 
-```
+```json
 {
   "nome":"rio de janeiro",
   "populacao": 15989929
 }
 ```
 
-** GET /teste-spring-hazelcast/cidades **
+**GET /teste-spring-hazelcast/cidades**
 
 Recurso utilizado para consultar as cidades no cache, recebendo um __200 Ok__ e um JSON com os resultados da consulta ou um __404 Not Found__ quando não retorna ninguem da consulta.
 
