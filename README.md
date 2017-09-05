@@ -2,10 +2,10 @@
 
 Aplicação feita em Spring Boot com intuito de elucidar a configuração de uma aplicação cliente para acesso a um cluster ou nó do hazelcast em outra maquina ou desvinculado ao projeto além do uso de *Predicates* na query de consulta.
 
-     [projeto cliente - maquina 1]
-               ||   /\
-               \/   ||
-[instancia cluster hazelcast - maquina n(s)]
+            [projeto cliente - maquina 1]
+                      ||   /\
+                      \/   ||
+     [instancia cluster hazelcast - maquina n(s)]
 
 
 # PRÉ-REQUISITOS
